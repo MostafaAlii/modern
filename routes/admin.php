@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 // Authentication Admin Route ::
 Route::group(['namespace' => 'Admin', 'prefix' => 'dashboard', 'middleware' => 'auth:admin'], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard'); // the first page admin visits if authenticated
-    Route::get('logout', 'LoginController@logout')->name('admin.logout'); // Logout 
+    Route::get('logout', 'LoginController@logout')->name('admin.logout'); // Logout
 });
 
 // Non_Authentication Admin Route ::
 Route::group(['namespace' => 'Admin', 'prefix' => 'dashboard', 'middleware' => 'guest:admin'], function () {
-    
+
     Route::get('login', 'LoginController@login')->name('admin.login');
     Route::post('login', 'LoginController@doLogin')->name('admin.post.login');
-    //Route::get('forgetPassword', 'LoginController@forgetPassword')->name('admin.forgetPassword');
-    //Route::post('forgetPassword', 'LoginController@postforgetPassword')->name('admin.post.forgetPassword');
+    Route::get('forgetPassword', 'LoginController@forgetPassword')->name('admin.forgetPassword');
+    Route::post('forgetPassword', 'LoginController@postForgetPassword')->name('admin.postforgetPassword');
+    Route::get('forgetPassword/{token}', 'LoginController@resetPassword')->name('admin.resetPassword');
+    Route::post('forgetPassword/{token}', 'LoginController@postResetPassword')->name('admin.postresetPassword');
 });
 

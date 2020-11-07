@@ -1,7 +1,7 @@
 @extends('layouts.login')
 @section('title')
-    {{ trans('admin.application_name') }} | 
-    {{ trans('admin.login_page_title') }}    
+    {{ trans('admin.application_name') }} |
+    {{ trans('admin.login_page_title') }}
 @endsection
 @section('content')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -44,18 +44,18 @@
                             <div class="form-group row">
                                 <div class="col-md-6 col-12 text-center text-sm-left">
                                     <fieldset>
-                                        <input type="checkbox" name="remember_me" id="remember-me" class="chk-remember"> 
+                                        <input type="checkbox" name="remember_me" id="remember-me" class="chk-remember">
                                         <label for="remember-me"> {{ trans('admin.remember_me') }} </label>
                                     </fieldset>
                                 </div>
                                 <div class="col-md-6 col-12 float-sm-left text-center text-sm-right">
-                                    <a href="{{-- route('admin.forgetPassword') --}}" class="card-link text-dark">
+                                    <a href="{{ route('admin.forgetPassword') }}" class="card-link text-dark">
                                         {{ trans('admin.forgot_password_link') }}
                                     </a>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-outline-dark btn-block">
-                                <i class="ft-unlock"> </i> 
+                                <i class="ft-unlock"> </i>
                                 {{ trans('admin.login_btn') }}
                             </button>
                         </form>
