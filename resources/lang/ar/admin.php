@@ -48,6 +48,7 @@ return [
     'logged_in_errors'                          =>                'هناك خطأ فى اسم المستخدم او كلمة المرور حاول مره اخرى ...!!',
     'new_password_success_login_message'        =>                'تم تغيير كلمه المرور بنجاح سجل دخولك بكلمه المرور الجديدة',
     'new_password_error_login_message'          =>                'هناك خطا فى تغيير كلمه المرور حاول مره اخرى',
+    'password_confirmed'                        =>                'يجب تطابق كليمتى المرور حاول مره اخرى',
     /**************************************_End_Start_Login_Page_**************************************************/
 
     /**************************************_Start_Dashboard_Navbar_************************************************/
@@ -75,20 +76,48 @@ return [
 
     /**************************************_Start_Admin_Page_************************************************/
     // breadcrumbs
-    'admins_managment'                          =>                 'ادارة المشرفين',
+    'admins_management'                         =>                 'ادارة المشرفين',
     'admins'                                    =>                  'المشرفين',
     'all_admins_in_website'                     =>                  'جميع المشرفين',
-    // Admis Table
+    // Admins Table
     'adminsName'                                =>                  'اسم المشرف',
     'adminNickname'                             =>                  'لقب المشرف',
     'adminEmail'                                =>                  'بريد المشرف',
     'adminImage'                                =>                  'الصورة',
     'adminLevel'                                =>                  'مستوى المشرف',
     'adminEmailStatus'                          =>                  'استقبال البريد',
+    'adminEmailVerification'                    =>                  'تاكيد الحساب',
     'adminEmailVerifiedDate'                    =>                  'تاريخ التفعيل',
     'adminStatus'                               =>                  'حالة المشرف',
     // Admin Export Btn
-    'addNewAdmin'                               =>                  'اضافة مشرف جديد',
+    'create_new_admin_btn'                      =>                  'اضافة مشرف جديد',
     'adminDetails'                              =>                  'بيانات المشرف',
     /**************************************_Start_Admin_Page_************************************************/
+
+    /**************************************_Start_Datatables_************************************************/
+    'ex_excel'                     => 'تصدير كـ Excel',
+    'ex_csv'                       => 'تصدير كـ CSV',
+    'ex_pdf'                       => 'تصدير كـ PDF',
+    'delete_selected'              => 'حذف المحدد',
+    'print_btn'                    => 'طباعة',
+    'all_record'                   => 'كل السجلات',
+    'sProcessing'                  => 'تحميل',
+    'sLengthMenu'                  => 'اظهار _MENU_ سجل',
+    'sZeroRecords'                 => 'صفر سجل',
+    'sEmptyTable'                  => 'جدول خالى',
+    'sInfo'                        => 'اظهار _START_ الى  _END_ من _TOTAL_ سجل',
+    'sInfoEmpty'                   => 'معلومات خالية',
+    'sInfoFiltered'                => 'معلومات منتقاه',
+    'sSearch'                      => 'بحث',
+    'sLoadingRecords'              => 'تحميل السجلات',
+    'sFirst'                       => 'الاول',
+    'sLast'                        => 'الاخير',
+    'sNext'                        => 'التالى',
+    'sPrevious'                    => 'السابق',
+    'sSortAscending'               => 'ترتيب بحسب الاقدم',
+    'sSortDescending'              => 'ترتيب بحسب الاحدث',
+    'sInfoPostFix'                 => '',
+    'sUrl'                         => '',
+    'sInfoThousands'               => '',
+    /**************************************_End_Datatables_************************************************/
 ];

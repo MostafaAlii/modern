@@ -31,13 +31,56 @@
 <script src="{{asset('assets/admin/js/scripts/pages/dashboard-crypto.js')}}" type="text/javascript"></script>
 
 
-<script src="{{asset('assets/admin/js/scripts/tables/datatables/datatable-basic.js')}}"type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatables/datatable-basic.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatables/datatable-styling.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatables-extensions/datatable-responsive.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatables-extensions/datatables-sources.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatable-button/datatable-button-basic.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatable-button/datatable-html5.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatable-button/datatable-print.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/js/scripts/tables/datatable-button/datatable-extensions-api.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/js/scripts/extensions/date-time-dropper.js')}}" type="text/javascript"></script>
 <!-- END PAGE LEVEL JS-->
 
 <script src="{{asset('assets/admin/js/scripts/forms/checkbox-radio.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/js/scripts/modal/components-modal.js')}}" type="text/javascript"></script>
 <script>
+    $('#table').DataTable({
+        paging :true,
+        //responsive: true,
+        processing: true,
+        orderBy: [[1, 'desc']],
+        minifiedAjax:true,
+        bProcessing:true,
+        lengthChange: true,
+        autoWidth: false,
+        info: true,
+        searching:true,
+        ordering:true,
+        lengthMenu: [[5, 10, 25, 100,-1], [5, 10, 25, 50, '{{ trans('admin.all_record') }}']],
+        language: {
+            "lengthMenu": "{{ trans('admin.sLengthMenu') }}",
+            "paginate":{
+                "sFirst"                    : "{{ trans('admin.sFirst') }}",
+                "sLast"                     : "{{ trans('admin.sLast') }}",
+                "sNext"                     : '{{ trans('admin.sNext') }}',
+                "sPrevious"                 : "{{ trans('admin.sPrevious') }}",
+            },
+            "sSearch"                      : "{{ trans('admin.sSearch') }}",
+            'sProcessing'                  : "{{ trans('admin.sProcessing') }}",
+            'sZeroRecords'                 : "{{ trans('admin.sZeroRecords') }}",
+            'sEmptyTable'                  : "{{ trans('admin.sEmptyTable') }}",
+            'sInfo'                        : "{{ trans('admin.sInfo') }}",
+            'sInfoEmpty'                   : "{{ trans('admin.sInfoEmpty') }}",
+            'sInfoFiltered'                : "{{ trans('admin.sInfoFiltered') }}",
+            'sLoadingRecords'              : "{{ trans('admin.sLoadingRecords') }}",
+            'sSortAscending'               : "{{ trans('admin.sSortAscending') }}",
+            'sSortDescending'              : "{{ trans('admin.sSortDescending') }}",
+            'sInfoPostFix'                 : "{{ trans('admin.sInfoPostFix') }}",
+            'sUrl'                         : "{{ trans('admin.sUrl') }}",
+            'sInfoThousands'               : "{{ trans('admin.sInfoThousands') }}",
+        },
+    });
     $('#meridians1').timeDropper({
         meridians: true,
         setCurrentTime: false

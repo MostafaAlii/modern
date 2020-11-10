@@ -12,7 +12,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/admin/images/ico/favicon.ico')}}">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700" rel="stylesheet">
     <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/toastr.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/animate/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/vendors.css')}}">
@@ -43,12 +43,11 @@
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
     <!-- END Custom CSS-->
-    
     @yield('style')
     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
     <style>
         body, h1,h2,h3,h4,h5,h6,p,a, span{
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', sans-serif; !important;
         }
     </style>
 </head>

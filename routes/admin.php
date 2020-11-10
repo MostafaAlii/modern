@@ -11,14 +11,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Authentication Admin Route ::
-Route::group(['namespace' => 'Admin', 'prefix' => 'dashboard', 'middleware' => 'auth:admin'], function () {
+Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard', 'middleware' => 'auth:admin'], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard'); // the first page admin visits if authenticated
     Route::get('logout', 'LoginController@logout')->name('admin.logout'); // Logout
+    /********************************* Start Admins Pages Routes ************************************/
+    Route::group(['prefix' => 'admins'], function () {
+        Route::get('/', 'AdminController@index')->name('admin.admins');
+    });
+    /********************************* End Admins Pages Routes ************************************/
 });
 
 // Non_Authentication Admin Route ::
-Route::group(['namespace' => 'Admin', 'prefix' => 'dashboard', 'middleware' => 'guest:admin'], function () {
-
+Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard', 'middleware' => 'guest:admin'], function () {
     Route::get('login', 'LoginController@login')->name('admin.login');
     Route::post('login', 'LoginController@doLogin')->name('admin.post.login');
     Route::get('forgetPassword', 'LoginController@forgetPassword')->name('admin.forgetPassword');
