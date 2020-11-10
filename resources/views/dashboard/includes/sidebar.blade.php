@@ -4,7 +4,7 @@
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
               <!-- Start Main Tab -->
               <li class="nav-item active">
-                     <a href="{{-- route('admin.dashboard') --}}">
+                     <a href="{{ route('admin.dashboard') }}">
                             <i class="la la-home"></i>
                             <span class="menu-title" data-i18n="nav.add_on_drag_drop.main">
                                    {{ trans('admin.dashboard') }}
@@ -41,7 +41,7 @@
                                    </a>
                             </li>
                             <li class="">
-                                   <a class="menu-item" href="{{-- route('admin.admins') --}}" data-i18n="nav.dash.ecommerce">
+                                   <a class="menu-item" href="{{ route('admin.admins') }}" data-i18n="nav.dash.ecommerce">
                                           <i class="la la-language"></i>
                                           {{ trans('admin.showAll_mainAdmins_in_sidebar') }}
                                    </a>
@@ -124,7 +124,7 @@
                             <li class="">
                                    <a class="menu-item" href="" data-i18n="nav.dash.ecommerce">
                                           <i class="la la-archive"></i>
-                                          Show All 
+                                          Show All
                                    </a>
                             </li>
                      </ul>
