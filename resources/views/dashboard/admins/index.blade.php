@@ -37,10 +37,13 @@
             <hr>
             <!-- Start Export Btn -->
             <div class="dt-buttons">
+                <button class="dt-button btn btn-primary" tabindex="0" aria-controls="table" type="button">
+                    <span><i class="la la-plus-circle"> </i> {{ trans('admin.create_new_admin_btn') }}</span>
+                </button>
                 <button class="dt-button btn btn-dark" tabindex="0" aria-controls="table" type="button">
                     <span><i class="la la-print"> </i> {{ trans('admin.print_btn') }}</span>
                 </button>
-                <button class="dt-button btn btn-info" tabindex="0" aria-controls="table" type="button">
+                <button class="dt-button btn btn-secondary" tabindex="0" aria-controls="table" type="button">
                     <span><i class="la la-file"> </i> {{ trans('admin.ex_csv') }}</span>
                 </button>
                 <button class="dt-button btn btn-success" tabindex="0" aria-controls="table" type="button">

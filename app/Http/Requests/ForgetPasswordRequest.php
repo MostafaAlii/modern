@@ -22,7 +22,7 @@ class ForgetPasswordRequest extends FormRequest
     {
         return [
             'email'         =>      'required|email',
-            'password'      =>      'required|Confirmed',
+            'password'      =>      'required|confirmed',
             'password_confirmation' =>  'required',
         ];
     }
@@ -33,6 +33,7 @@ class ForgetPasswordRequest extends FormRequest
             'email.required'        =>  trans('admin.email_required') ,
             'email.email'           =>  trans('admin.real_email') ,
             'password.required'     =>  trans('admin.password_required'),
+            'confirmed'             =>  trans('admin.password_confirmed'),
             'password_confirmation' =>  trans('admin.password_confirmation_required'),
         ];
     }
