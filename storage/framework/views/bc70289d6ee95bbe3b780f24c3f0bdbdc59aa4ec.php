@@ -38,9 +38,9 @@
             <hr>
             <!-- Start Export Btn -->
             <div class="dt-buttons">
-                <button class="dt-button btn btn-primary" tabindex="0" aria-controls="table" type="button">
+                <a href="<?php echo e(route('admin.create')); ?>" class="dt-button btn btn-primary" tabindex="0" aria-controls="table" type="button">
                     <span><i class="la la-plus-circle"> </i> <?php echo e(trans('admin.create_new_admin_btn')); ?></span>
-                </button>
+                </a>
                 <button class="dt-button btn btn-dark" tabindex="0" aria-controls="table" type="button">
                     <span><i class="la la-print"> </i> <?php echo e(trans('admin.print_btn')); ?></span>
                 </button>
@@ -86,7 +86,7 @@
                                     <!-- Start Card Body -->
                                     <div class="card-body card-dashboard">
                                         <!-- Start Table -->
-                                        <table id="table" class="table display nowrap table-responsive table-striped table-bordered" style="width: 100%;">
+                                        <table id="table" class="table display nowrap table-responsive table-striped table-bordered">
                                             <thead class="">
                                             <tr>
                                                 <th><input type="checkbox" class="check_all" id="checkAll" /></th>
@@ -97,14 +97,47 @@
                                                 <th><?php echo e(trans('admin.adminImage')); ?></th>
                                                 <th><?php echo e(trans('admin.adminLevel')); ?></th>
                                                 <th><?php echo e(trans('admin.adminEmailStatus')); ?></th>
-                                                <th><?php echo e(trans('admin.adminEmailVerification')); ?></th>
                                                 <th><?php echo e(trans('admin.adminEmailVerifiedDate')); ?></th>
                                                 <th><?php echo e(trans('admin.adminStatus')); ?></th>
                                                 <th><?php echo e(trans('admin.actions')); ?></th>
                                             </tr>
                                             </thead>
                                             <tbody>
+                                                <?php if(isset($admins)): ?>
+                                                    <?php $__currentLoopData = $admins; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $admin): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <tr>
+                                                            <th><input type="checkbox" class="check_all" id="checkAll" /></th>
+                                                            <td><?php echo e($admin->id); ?></td>
+                                                            <td><?php echo e($admin->name); ?></td>
+                                                            <td><?php echo e($admin->username); ?></td>
+                                                            <td><?php echo e($admin->email); ?></td>
+                                                            <td><img class="rounded" style="width:150px;height:80px;border-radius: 5px;" src="<?php echo e($admin->avatar); ?>"></td>
+                                                            <td>Levels</td>
+                                                            <td><?php echo e($admin->getReceivedEmail()); ?></td>
+                                                            <td><?php echo e($admin->email_verified_at); ?></td>
+                                                            <td><?php echo e($admin->getStatus()); ?></td>
+                                                            <td>
+                                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                                    <a href="" class="btn btn-outline-dark btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        <i class="la la-eye"> </i>
+                                                                        <?php echo e(trans('admin.show_btn')); ?>
 
+                                                                    </a>
+                                                                    <a href="" class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        <i class="la la-edit"> </i>
+                                                                        <?php echo e(trans('admin.edit_btn')); ?>
+
+                                                                    </a>
+                                                                    <a href="" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        <i class="la la-trash"> </i>
+                                                                        <?php echo e(trans('admin.delete_btn')); ?>
+
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php endif; ?>
                                             </tbody>
                                         </table>
                                         <!-- End Table -->

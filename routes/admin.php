@@ -17,6 +17,8 @@ Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard', 'middleware' 
     /********************************* Start Admins Pages Routes ************************************/
     Route::group(['prefix' => 'admins'], function () {
         Route::get('/', 'AdminController@index')->name('admin.admins');
+        Route::get('create', 'AdminController@create')->name('admin.create');
+        Route::post('create', 'AdminController@store')->name('admin.store');
     });
     /********************************* End Admins Pages Routes ************************************/
 });

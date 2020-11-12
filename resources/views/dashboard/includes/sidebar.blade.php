@@ -12,7 +12,7 @@
                      </a>
               </li>
               <!-- End Main Tab -->
-              <!-- Start Main Settins Tab -->
+              <!-- Start Main Settings Tab -->
               <li class="nav-item">
                      <a href="">
                             <i class="la la-cogs"></i>
@@ -21,7 +21,7 @@
                             </span>
                      </a>
               </li>
-              <!-- End Main Settins Tab -->
+              <!-- End Main Settings Tab -->
 
               <!-- Start Admins Tab -->
               <li class="nav-item">
@@ -30,12 +30,12 @@
                             <span class="menu-title" data-i18n="nav.dash.main">
                                    {{ trans('admin.mainAdmins_in_sidebar') }}
                             </span>
-                            <span class="badge badge badge-dark badge-pill float-right mr-2">0</span>
+                            <span class="badge badge badge-dark badge-pill float-right mr-2">{{ App\Models\Admin::count() }}</span>
                      </a>
                      <!-- Start Admins Dropdown Menu -->
                      <ul class="menu-content">
                             <li>
-                                   <a class="menu-item" href="" data-i18n="nav.dash.crypto">
+                                   <a class="menu-item" href="{{ route('admin.create') }}" data-i18n="nav.dash.crypto">
                                           <i class="la la-plus-circle"></i>
                                           {{ trans('admin.addNew_mainAdmins_in_sidebar') }}
                                    </a>
