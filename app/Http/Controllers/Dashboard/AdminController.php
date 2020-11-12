@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminRequest;
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\NewAdminCreated;
 class AdminController extends Controller
 {
     public function index(){
@@ -24,13 +26,16 @@ class AdminController extends Controller
             else
                 $request->request->add(['status'    =>  1]);
             // Create Statement
-            Admin::create([
-                'name'          =>  $request->name,
-                'username'      =>  $request->username,
-                'email'         =>  $request->email,
-                'status'        =>  $request->status,
-                'password'      =>  bcrypt($request->password),
-            ]);
+            $admin = Admin::create([
+                        'name'          =>  $request->name,
+                        'username'      =>  $request->username,
+                        'email'         =>  $request->email,
+                        'status'        =>  $request->status,
+                        'password'      =>  bcrypt($request->password),
+                    ]);
+            // Sending Mail To Continue Creating Admin Information
+            //$admin = new Admin::first();
+            Notification::send($admin, new NewAdminCreated($admin));
             // Redirect Messages
             return redirect()->route('admin.admins')->with(['success' => trans('admin.success_admin_create')]);
         } catch (\Exception $ex) {

@@ -4,18 +4,19 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use App\Models\Admin;
 class NewAdminCreated extends Notification
 {
     use Queueable;
-
+    public $admin;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($admin)
     {
-        //
+        $this->admin = $admin;
     }
 
     /**
@@ -37,10 +38,14 @@ class NewAdminCreated extends Notification
      */
     public function toMail($notifiable)
     {
+        $subject = sprintf('%s:' . trans('admin.success_admin_account_created_via_mail') . '%s!', config('app.name'), auth()->user()->name );
+        $greeting = sprintf(trans('admin.welcome_user_text') , $notifiable->name);
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->subject($subject)
+                    ->greeting($greeting)
+                    ->line(trans('admin.click_here_to_continue_info_create'))
+                    ->action(trans('admin.click_here'), route('admin.login'))
+                    ->line(trans('admin.thank_you_for_use_application'));
     }
 
     /**

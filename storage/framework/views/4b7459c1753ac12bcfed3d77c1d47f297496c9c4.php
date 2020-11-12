@@ -121,7 +121,7 @@ unset($__errorArgs, $__bag); ?>
                             <!-- End Row -->
 
                             <div class="row">
-                                <!-- Start Username Field -->
+                                <!-- Start Password Field -->
                                 <div class="col-md-4">
                                     <div class="form-group position-relative">
                                         <label style="font-weight: bold;" for="projectinput2"><?php echo e(trans('admin.password')); ?></label>
@@ -138,7 +138,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 </div>
-                                <!-- End Username Field -->
+                                <!-- End Password Field -->
                             </div>
 
                             <!-- Start Status Row -->
