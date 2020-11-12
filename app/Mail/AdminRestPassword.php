@@ -26,7 +26,7 @@ class AdminRestPassword extends Mailable
     public function build()
     {
         return $this->markdown('dashboard.emails.admin_reset_password')
-                    ->subject('Reset Admin Account')
+                    ->subject(trans('admin.reset_admin_account'))
                     ->with('data', $this->data);
     }
 }

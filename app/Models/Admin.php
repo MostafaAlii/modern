@@ -37,10 +37,10 @@ class Admin extends Authenticatable implements MustVerifyEmail
     ];
 
     public  function getStatus(){
-        echo ($this->status == 0) ? '<button class="btn btn-outline-success">'.trans('admin.active').'</button>' : '<button class="btn btn-outline-danger">'.trans('admin.not_active').'</button>';
+        echo ($this->status == 1) ? '<button class="btn btn-outline-success">'.trans('admin.active').'</button>' : '<button class="btn btn-outline-danger">'.trans('admin.not_active').'</button>';
     }
 
     public  function getReceivedEmail(){
-        echo ($this->receive_email == 0) ? '<button class="btn btn-outline-success">'.trans('admin.available').'</button>' : '<button class="btn btn-outline-danger">'.trans('admin.not_available').'</button>';
+        echo ($this->receive_email == 1) ? '<button class="btn btn-outline-success">'.trans('admin.available').'</button>' : '<button class="btn btn-outline-danger">'.trans('admin.not_available').'</button>';
     }
 }
