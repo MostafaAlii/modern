@@ -37,9 +37,9 @@
             <hr>
             <!-- Start Export Btn -->
             <div class="dt-buttons">
-                <button class="dt-button btn btn-primary" tabindex="0" aria-controls="table" type="button">
+                <a href="{{ route('admin.create') }}" class="dt-button btn btn-primary" tabindex="0" aria-controls="table" type="button">
                     <span><i class="la la-plus-circle"> </i> {{ trans('admin.create_new_admin_btn') }}</span>
-                </button>
+                </a>
                 <button class="dt-button btn btn-dark" tabindex="0" aria-controls="table" type="button">
                     <span><i class="la la-print"> </i> {{ trans('admin.print_btn') }}</span>
                 </button>
@@ -85,7 +85,7 @@
                                     <!-- Start Card Body -->
                                     <div class="card-body card-dashboard">
                                         <!-- Start Table -->
-                                        <table id="table" class="table display nowrap table-responsive table-striped table-bordered" style="width: 100%;">
+                                        <table id="table" class="table display nowrap table-responsive table-striped table-bordered">
                                             <thead class="">
                                             <tr>
                                                 <th><input type="checkbox" class="check_all" id="checkAll" /></th>
@@ -96,14 +96,44 @@
                                                 <th>{{ trans('admin.adminImage') }}</th>
                                                 <th>{{ trans('admin.adminLevel') }}</th>
                                                 <th>{{ trans('admin.adminEmailStatus') }}</th>
-                                                <th>{{ trans('admin.adminEmailVerification') }}</th>
                                                 <th>{{ trans('admin.adminEmailVerifiedDate') }}</th>
                                                 <th>{{ trans('admin.adminStatus') }}</th>
                                                 <th>{{ trans('admin.actions') }}</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-
+                                                @isset($admins)
+                                                    @foreach($admins as $admin)
+                                                        <tr>
+                                                            <th><input type="checkbox" class="check_all" id="checkAll" /></th>
+                                                            <td>{{ $admin->id  }}</td>
+                                                            <td>{{ $admin->name  }}</td>
+                                                            <td>{{ $admin->username  }}</td>
+                                                            <td>{{ $admin->email  }}</td>
+                                                            <td><img class="rounded" style="width:150px;height:80px;border-radius: 5px;" src="{{ $admin->avatar  }}"></td>
+                                                            <td>Levels</td>
+                                                            <td>{{ $admin->getReceivedEmail()  }}</td>
+                                                            <td>{{ $admin->email_verified_at  }}</td>
+                                                            <td>{{ $admin->getStatus()  }}</td>
+                                                            <td>
+                                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                                    <a href="" class="btn btn-outline-dark btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        <i class="la la-eye"> </i>
+                                                                        {{ trans('admin.show_btn') }}
+                                                                    </a>
+                                                                    <a href="" class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        <i class="la la-edit"> </i>
+                                                                        {{ trans('admin.edit_btn') }}
+                                                                    </a>
+                                                                    <a href="" class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">
+                                                                        <i class="la la-trash"> </i>
+                                                                        {{ trans('admin.delete_btn') }}
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                @endisset
                                             </tbody>
                                         </table>
                                         <!-- End Table -->

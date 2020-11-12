@@ -8,15 +8,18 @@ return [
     'createdAt'                                 =>              'مضاف فى',
     'updatedAt'                                 =>              'محدث فى',
     'active'                                    =>              'مفعل',
-    'notActive'                                 =>              'غير مفعل',
-    'avilable'                                  =>              'متاح',
-    'notAvilable'                               =>              'غير متاح',
-    'edit'                                      =>              'تعديل',
-    'delete'                                    =>              'حذف',
+    'not_active'                                 =>              'غير مفعل',
+    'available'                                  =>              'متاح',
+    'not_available'                               =>              'غير متاح',
+    'edit_btn'                                      =>              'تعديل',
+    'delete_btn'                                    =>              'حذف',
+    'show_btn'                                      =>              'عرض',
     'save'                                      =>              'حفظ',
-    'back'                                      =>              'نراجع',
+    'back'                                      =>              'تراجع',
     'chose'                                     =>              'اختر',
     'ID'                                        =>              'الرقم',
+    'status'                                    =>              'الحالة',
+    'password'                                  =>              'كلمه المرور',
     /**************************************_End_General_*****************************************************/
 
     /**************************************_Start_Login_Page_*****************************************************/
@@ -81,8 +84,11 @@ return [
     'all_admins_in_website'                     =>                  'جميع المشرفين',
     // Admins Table
     'adminsName'                                =>                  'اسم المشرف',
+    'adminName_typing'                          =>                  'اكتب اسم المشرف',
+    'adminNickname_typing'                      =>                  'اكتب لقب المشرف',
     'adminNickname'                             =>                  'لقب المشرف',
     'adminEmail'                                =>                  'بريد المشرف',
+    'adminEmail_typing'                         =>                  'اكتب بريد المشرف',
     'adminImage'                                =>                  'الصورة',
     'adminLevel'                                =>                  'مستوى المشرف',
     'adminEmailStatus'                          =>                  'استقبال البريد',
@@ -91,7 +97,18 @@ return [
     'adminStatus'                               =>                  'حالة المشرف',
     // Admin Export Btn
     'create_new_admin_btn'                      =>                  'اضافة مشرف جديد',
+    // Create Admin Page
+    'admin_create'                              =>                  'اضافة مشرف',
+    'create_new_admin'                          =>                  'اضافة مشرف جديد',
     'adminDetails'                              =>                  'بيانات المشرف',
+    // Success & Error Messages
+    'success_admin_create'                      =>                  'تم حفظ بيانات المشرف بنجاح برجاء التوجه لبريدك لاستكمال الحفظ',
+    'error_admin_create'                        =>                  'لم يتم الحفظ برجاء المحاولة مرة اخرى',
+    // Admin Page Validation
+    'username_required'                         =>                  'لقب المشرف مطلوب',
+    'name_required'                             =>                  'اسم المشرف مطلوب',
+    'username_max'                              =>                  'الحد الاقصى لللقب هو 5 احرف',
+    'name_max'                                  =>                  'الحد الاقصى للاسم هو 50 حرف',
     /**************************************_Start_Admin_Page_************************************************/
 
     /**************************************_Start_Datatables_************************************************/
